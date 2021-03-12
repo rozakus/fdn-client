@@ -19,11 +19,13 @@ export default function Header() {
         <HStack>
           <Button
             onClick={() => { toOrderPage() }}
+            size='sm'
             colorScheme="teal"
             variant={pathname === '/order' ? 'solid' : 'outline'}
           >Order</Button>
           <Button
             onClick={() => { toPivotPage() }}
+            size='sm'
             colorScheme="teal"
             variant={pathname === '/pivot' ? 'solid' : 'outline'}
           >Pivot</Button>

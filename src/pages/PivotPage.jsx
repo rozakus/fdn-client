@@ -6,7 +6,7 @@ import { getPivots, getProducts } from '../store/actions/mainActions'
 import Header from '../components/Header'
 
 // UI
-import { Box, Table, Thead, Tbody, Tr, Th, Td, Button } from '@chakra-ui/react'
+import { Box, Table, Thead, Tbody, Tr, Th, Td } from '@chakra-ui/react'
 
 export default function PivotPage() {
   // settings
@@ -26,7 +26,7 @@ export default function PivotPage() {
   return (
     <Box maxW='max-content' p='12'>
       <Header />
-      <Table maxW='max-content' variant="striped" colorScheme="teal">
+      <Table maxW='max-content' variant="striped" colorScheme="teal" size='sm' mt='10'>
         <Thead>
           <Tr>
             <Th textAlign='center'>Fullname</Th>
@@ -40,7 +40,6 @@ export default function PivotPage() {
                 </>
                 : ''
             }
-
           </Tr>
         </Thead>
         <Tbody>
@@ -52,7 +51,7 @@ export default function PivotPage() {
                     <Td>{pivot.firstname} {pivot.lastname}</Td>
                     <Td>{pivot.email}</Td>
                     {
-                      pivot.Products.map(product=> {
+                      pivot.Products.map(product => {
                         return <Td textAlign='center'>{product.totalQuantity}</Td>
                       })
                     }

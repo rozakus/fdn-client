@@ -6,7 +6,7 @@ import { getOrders } from '../store/actions/mainActions'
 import Header from '../components/Header'
 
 // UI
-import { Box, Table, Thead, Tbody, Tr, Th, Td, Text } from '@chakra-ui/react'
+import { Box, Table, Thead, Tbody, Tr, Th, Td } from '@chakra-ui/react'
 
 export default function OrderPage() {
   // settings
@@ -24,7 +24,7 @@ export default function OrderPage() {
   return (
     <Box maxW='full' p='12'>
       <Header />
-      <Table variant="striped" colorScheme="teal">
+      <Table variant="striped" colorScheme="teal" size='sm' mt='10'>
         <Thead>
           <Tr>
             <Th textAlign='center'>ID</Th>
@@ -46,7 +46,7 @@ export default function OrderPage() {
                     <Td>{order.User.email}</Td>
                     <Td>{order.Product.item}</Td>
                     <Td textAlign='center'>{order.quantity}</Td>
-                    <Td textAlign='center'>{order.total_price}</Td>
+                    <Td textAlign='center'>IDR {order.total_price.toString().replace(/(\d)(?=(\d{3})+(?:\.\d+)?$)/g, "$1\.")},00</Td>
                   </Tr>
                 )
               })
